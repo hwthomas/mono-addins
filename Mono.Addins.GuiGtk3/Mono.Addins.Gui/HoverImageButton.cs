@@ -154,7 +154,7 @@ namespace Mono.Addins.GuiGtk3
 			PropagateDraw (Child, cr);
 
             if(HasFocus && draw_focus) {
-                Style.PaintFocus(Style, cr, StateType.Normal, this, "button",
+                Style.PaintFocus( cr, StateType.Normal, this, "button",
                     0, 0, Allocation.Width, Allocation.Height);
             }
         }
@@ -193,16 +193,16 @@ namespace Mono.Addins.GuiGtk3
 
             UpdateImage();
         }
-		
+
 		public Gdk.Pixbuf Pixbuf {
 			get { return this.normal_pixbuf; }
-			set { 
-				this.normal_pixbuf = value; 
-				active_pixbuf = ColorShiftPixbuf(normal_pixbuf, 30); 
+			set {
+				this.normal_pixbuf = value;
+				active_pixbuf = ColorShiftPixbuf(normal_pixbuf, 30);
 				UpdateImage();
 			}
 		}
-		
+
 
         private static byte PixelClamp(int val)
         {
